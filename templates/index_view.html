@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+
+<head>
+	<meta charset="utf-8"/>
+	<title>Metody generowania przekrojow pionowych obiektow 3D</title>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body style="margin: 20px;">
+
+	<div class="main">
+
+		<h1>Metody generowania przekrojów pionowych obiektów 3D</h1>
+
+		<h3>Praca inżynierska | Autor: Adrian Niewiadomski | Promotor: dr Krzysztof Wróbel</h3>
+
+		<br>
+
+		<p>
+			W ramach rozprawy zaroponowano rozwiązanie teoretyczne oraz przedstawiono implementację algorytmów
+			rozwiązujących następujące problemy występujące w grafice komputerowej:
+
+			<ul>
+				<li>
+					tworzenie poprawnie wyświetlanych przekrojów pionowych obiektów 3d,
+				</li>
+				<br>
+				<li>
+					umożliwienie poprawnego wyświetlania ścian obiektu 3d poprzez poprawę kolejności wierzchołków w ścianach.
+				</li>
+			</ul>
+		</p>
+
+		<p>
+			Aplikację napisano w językach PHP oraz JavaScript z wykorzystaniem biblioteki Three.js.
+		</p>
+
+		<br><br>
+
+		<h1>Witaj!</h1>
+	    <!--
+			echo '<a href="'.getConf()->action_url.'viewModels" class="pure-button button-success" style="width:90%;margin:0 auto;display:block;">Aplikacja główna</a>';
+			echo '<br>';
+			echo '<a href="'.getConf()->action_url.'edit" class="pure-button button-error" style="width:90%;margin:0 auto;display:block;">Korekta modeli</a>';
+		-->
+		<a href="/view_models" class="pure-button button-success" style="width:90%;margin:0 auto;display:block;">Aplikacja główna</a>
+		<br>
+		<a href="/edit" class="pure-button button-error" style="width:90%;margin:0 auto;display:block;">Korekta modeli</a>
+
+		<!--
+	        if ($this->user->login == ''){
+				echo '<br>';
+	            echo '<a href="'.getConf()->action_url.'login" class="pure-button pure-button-primary" style="width:90%;margin:0 auto;display:block;">Logowanie</a>';
+	        }
+
+	        if ($this->user->role == 'admin'){
+				echo '<br>';
+				echo '<a href="'.getConf()->action_url.'personList" class="pure-button pure-button-primary" style="width:90%;margin:0 auto;display:block;">Użytkownicy</a>';
+	        }
+
+			if ($this->user->login != ''){
+				echo '<br>';
+	            echo '<a href="'.getConf()->action_url.'logout" class="pure-button pure-button-primary" style="width:90%;margin:0 auto;display:block;background-color:black">Wyloguj</a>';
+	        }
+
+			echo '<br>';
+	    ?> -->
+
+	</div>
+
+	<!-- <?php
+
+		echo '<div class="bottom-margin">';
+			if (getMessages()->isError()){
+				echo '<div class="messages error">';
+					echo '<ol>';
+						foreach (getMessages()->getErrors() as $err){
+							echo '<li>'.$err.'</li>';
+						}
+					echo '</ol>';
+				echo '</div>';
+			}
+
+			if (getMessages()->isInfo()){
+				echo '<div class="messages info">';
+					echo '<ol>';
+						foreach (getMessages()->getInfos() as $inf){
+							echo '<li>'.$inf.'</li>';
+						}
+					echo '</ol>';
+				echo '</div>';
+			}
+		echo '</div>';
+
+	?> -->
+
+</body>
+
+</html>

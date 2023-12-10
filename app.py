@@ -12,5 +12,5 @@ def hello_world():
 
 @app.route("/cross_section_view")
 def view_models():
-    files = os.listdir("_uploads")
+    files = os.listdir("static/_uploads")
     return render_template("cross_section_view.html", files=files)

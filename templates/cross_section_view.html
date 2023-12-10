@@ -3,17 +3,32 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Metody generowania przekrojow pionowych obiektow 3D</title>
-
-
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
-
 		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 
-        <?php
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/menuGlowne.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+		<script type="text/javascript" src="{{ url_for('static', filename='js/lib/helper_functions.js') }}"></script>
+        <!-- <?php
 			echo '<link rel="stylesheet" href="'.getConf()->app_url.'/css/menuGlowne.css">';
             echo '<link rel="stylesheet" href="'.getConf()->app_url.'/css/style.css">';
             echo '<script type="text/javascript" src="'.getConf()->app_url.'/js/lib/helper_functions.js"></script>';
+        -->
 
+		{% if files %}
+			<script type="text/javascript" src="{{ url_for('static', filename='js/lib/three.js') }}"></script>
+			<script type="text/javascript" src="{{ url_for('static', filename='js/lib/dat.gui.min.js') }}"></script>
+			<script type="text/javascript" src="{{ url_for('static', filename='js/lib/binaryReader.js') }}"></script>
+			<script type="text/javascript" src="{{ url_for('static', filename='js/lib/g3dReader.js') }}"></script>
+			<script type="text/javascript" src="{{ url_for('static', filename='js/lib/TrackballControls.js') }}"></script>
+
+			<script type="text/javascript" src="{{ url_for('static', filename='js/gui.js') }}"></script>
+			<script type="text/javascript" src="{{ url_for('static', filename='/js/main.js') }}"></script>
+			<script type="text/javascript" src="{{ url_for('static', filename='js/model.js') }}"></script>
+			<script type="text/javascript" src="{{ url_for('static', filename='js/odcinek.js') }}"></script>
+			<script type="text/javascript" src="{{ url_for('static', filename='js/normalnyDoWierzcholka.js') }}"></script>
+		{% endif %}
+		<!--
 			if(isset($models)){
 				echo '<script type="text/javascript" src="'.getConf()->app_url.'/js/lib/three.js"></script>';
 				echo '<script type="text/javascript" src="'.getConf()->app_url.'/js/lib/dat.gui.min.js"></script>';
@@ -27,18 +42,22 @@
 				echo '<script type="text/javascript" src="'.getConf()->app_url.'/js/odcinek.js"></script>';
 				echo '<script type="text/javascript" src="'.getConf()->app_url.'/js/normalnyDoWierzcholka.js"></script>';
 			}
-		?>
+		?> -->
 	</head>
 
 	<body>
 		<div class="body">
 			<div id="navbar">
-				<?php
+				<a href="/cross_section_view" class="nav-item active">Aplikacja główna</a>';
+				<a href="/edit" class="nav-item">Korektor modeli</a>';
+				<!-- <?php
 					$aktywnyLink = explode("=", $_SERVER['REQUEST_URI'])[1];
 
 					echo '<a href="'.getConf()->action_url.'viewModels" class="nav-item '.($aktywnyLink=='viewModels'?"active":"").'">Aplikacja główna</a>';
 					echo '<a href="'.getConf()->action_url.'edit" class="nav-item '.(($aktywnyLink=='edit'||$aktywnyLink=='save')?'active':'').'">Korektor modeli</a>';
-
+				-->
+				
+				<!-- 
 					if ($this->user->login != ''){
 							echo '<div class="logout">';
 								echo '<a href="'.getConf()->action_url.'logout" class="nav-item">Wyloguj</a>';
@@ -56,7 +75,7 @@
 							echo '<a href="'.getConf()->action_url.'login" class="nav-item">Zaloguj</a>';
 						echo '</div>';
 					}
-				?>
+				?> -->
 			</div>
 
 			<div id="content">
@@ -69,12 +88,12 @@
 					var xro, yro, zro;
 					var pliki = [];
 					var sciezka;
-					<?php
-				        foreach ($wanted as $m){
-				            echo 'pliki.push("'.$m.'");';
-				        }
-						echo 'sciezka = "'.getConf()->uploads.'";';
-				    ?>
+					// <?php
+				    //    foreach ($wanted as $m){
+				    //        echo 'pliki.push("'.$m.'");';
+				    //    }
+					//	echo 'sciezka = "'.getConf()->uploads.'";';
+				    //?>
 
 					displayGUI();
 					inicjujScene();

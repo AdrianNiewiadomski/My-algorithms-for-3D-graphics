@@ -22,6 +22,7 @@ def display_cross_section_view():
 @app.route("/model_corrector_view")
 @app.route("/model_corrector_view/<chosen_file>")
 def display_corrector_view(chosen_file: str = "text.txt"):
-    path = PATH + url_for("static", filename="_incorrect_models")
-    files = os.listdir(path[1:])
-    return render_template("model_corrector_view.html", files=files, chosen_file=chosen_file)
+    models_path = PATH + url_for("static", filename="_incorrect_models")
+    files = os.listdir(models_path)
+    return render_template("model_corrector_view.html", files=files,
+                           chosen_file=chosen_file)

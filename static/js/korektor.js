@@ -65,7 +65,7 @@ class Model{
     }
 
     wczytajZServera(nazwa){    //this.wczytajZServera = function(nazwa) {
-        console.log("wczytajZServera()");
+        // console.log("wczytajZServera()");
         var xhttp = new XMLHttpRequest();
 
         xhttp.onreadystatechange = function() {
@@ -74,7 +74,7 @@ class Model{
                 model.usunZeSceny();
 
                 model.nazwaModelu = nazwa.substring(nazwa.lastIndexOf("/")+1);
-                console.log("model.nazwaModelu = "+model.nazwaModelu);
+                // console.log("model.nazwaModelu = "+model.nazwaModelu);
                 var tekst = this.responseText;
                 model.wczytajObiekt(tekst);
                 model.rysuj();
@@ -86,7 +86,7 @@ class Model{
     }
 
     wczytajZServeraIPopraw(nazwa){    //this.wczytajZServera = function(nazwa) {
-        console.log("wczytajZServera()");
+        // console.log("wczytajZServera()");
         var xhttp = new XMLHttpRequest();
 
         xhttp.onreadystatechange = function() {
@@ -95,7 +95,7 @@ class Model{
                 model.usunZeSceny();
 
                 model.nazwaModelu = nazwa.substring(nazwa.lastIndexOf("/")+1);
-                console.log("model.nazwaModelu = "+model.nazwaModelu);
+                // console.log("model.nazwaModelu = "+model.nazwaModelu);
                 var tekst = this.responseText;
                 model.wczytajObiekt(tekst);
                 model.wyznaczPierwszyWektorNormalny();

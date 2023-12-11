@@ -28,28 +28,8 @@
 	<body>
 		<div class="body">
 			<div id="navbar">
-				<a href="/cross_section_view" class="nav-item active">Aplikacja główna</a>';
-				<a href="/edit" class="nav-item">Korektor modeli</a>';
-				
-				<!-- 
-					if ($this->user->login != ''){
-							echo '<div class="logout">';
-								echo '<a href="'.getConf()->action_url.'logout" class="nav-item">Wyloguj</a>';
-							echo '</div>';
-					}
-
-					if ($this->user->role == 'admin'){
-						echo '<div class="logout">';
-							echo '<a href="'.getConf()->action_url.'personList" class="nav-item">Użytkownicy</a>';
-						echo '</div>';
-					}
-
-					if ($this->user->login == ''){
-						echo '<div class="logout">';
-							echo '<a href="'.getConf()->action_url.'login" class="nav-item">Zaloguj</a>';
-						echo '</div>';
-					}
-				?> -->
+				<a href="/cross_section_view" class="nav-item active">Przekroje obiektów 3D</a>
+				<a href="/model_corrector_view" class="nav-item">Korektor modeli</a>
 			</div>
 
 			<div id="content">
@@ -64,9 +44,9 @@
 					var sciezka;
 
 					{%  for file in files  %}
-						pliki.push("/{{ file }}");
+						pliki.push("{{ file }}");
 					{%  endfor  %}
-					sciezka = "{{ url_for('static', filename='_uploads') }}";
+					sciezka = "{{ url_for('static', filename='_models') }}/";
 					
 					displayGUI();
 					inicjujScene();

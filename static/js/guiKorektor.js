@@ -29,7 +29,7 @@ function displayGUI(flaga, nazwa){
 
     };
 
-    console.log(this.parameters);
+    // console.log(this.parameters);
     if(nazwa!=""){
         this.parameters.a=nazwa;
     }

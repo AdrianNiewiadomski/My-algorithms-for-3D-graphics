@@ -30,7 +30,8 @@ function inicjujScene(){
     // mesh.name = "mesh";
     // //mesh = new THREE.Mesh();
     // scene.add(mesh);
-    wczytajDaneTekstowe('text.txt');
+    // wczytajDaneTekstowe('text.txt');
+    wczytajDaneTekstowe('Cube');
     camera.position.z = 3;
 
     controls = new THREE.TrackballControls( camera, renderer.domElement);

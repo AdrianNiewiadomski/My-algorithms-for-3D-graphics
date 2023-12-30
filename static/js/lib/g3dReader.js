@@ -62,7 +62,15 @@ function wczytajDaneBinarne(nazwa){
             // Dane obiektu. Nazwa
             var tempName = czytnikBinarny.readString(20);
             var name = extractName(tempName);
-            //console.log("name :" + name);
+            console.log("name :" + name);
+
+            if (name.includes("Warstwa")) {
+                name = name.replace("Warstwa", "Layer");
+            }
+
+            if (name.includes("Uskok")) {
+                name = name.replace("Uskok", "Fault");
+            }
 
             // Typ obiektu: 1- Blok, 2- uskok.
             var typ = czytnikBinarny.readInt8();

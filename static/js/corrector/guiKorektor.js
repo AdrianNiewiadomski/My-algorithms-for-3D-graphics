@@ -34,9 +34,10 @@ function displayGUI(nazwa){
     // console.log(this.parameters);
     if(nazwa!=""){
         this.parameters.a=nazwa;
+        model.wczytajZServeraIPopraw(sciezka2+nazwa);
     }
 
-    var name = gui.add(parameters, 'a').name('Nazwa');
+    var name = gui.add(parameters, 'a').name('Name');
     var geometr = gui.add(parameters, 'b', pliki).name('Model');
     geometr.onChange(function(jar){
         // parameters.a = jar;
@@ -50,8 +51,8 @@ function displayGUI(nazwa){
         model.correction=true;
     });
 
-    gui.add(featuresObj,'downloadModel').name('Pobierz model');
-    gui.add(featuresObj,'toggleCorrection').name('Toggle Correction');
+    gui.add(featuresObj,'downloadModel').name('Download model');
+    gui.add(featuresObj,'toggleCorrection').name('Toggle correction');
 
     //gui.close();
     gui.open();

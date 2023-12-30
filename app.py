@@ -12,14 +12,14 @@ def display_home():
     return render_template("index_view.html")
 
 
-@app.route("/cross_section_view")
+@app.route("/cross_section")
 def display_cross_section_view():
     models_path = PATH + url_for("static", filename='_models')
     files = os.listdir(models_path)
     return render_template("cross_section_view.html", files=files)
 
 
-@app.route("/model_corrector_view")
+@app.route("/model_corrector")
 @app.route("/model_corrector_view/<chosen_file>")
 def display_corrector_view(chosen_file: str = "text.txt"):
     models_path = PATH + url_for("static", filename="_incorrect_models")

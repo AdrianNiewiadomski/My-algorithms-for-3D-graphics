@@ -9,7 +9,7 @@ function displayGUI(){
     //console.log(pliki);
 
     parameters = {
-        a: "text.txt",
+        a: "Cube",
         b: "",
         c: false,
         d: 1,
@@ -17,7 +17,7 @@ function displayGUI(){
         f: "#ffffff",
     };
 
-    var name = gui.add(parameters, 'a').name('Nazwa');
+    var name = gui.add(parameters, 'a').name('Name');
     var geometr = gui.add(parameters, 'b', pliki).name('Model');
     geometr.onChange(function(jar){
         // parameters.a = jar;
@@ -38,7 +38,7 @@ function displayGUI(){
     //var model = gui.add(parameters, 'c').name('Przekrój');
 
 
-    var xdimen = gui.add(parameters, 'd').min(-1).max(1).step(speed).name('Przekrój (Oś-x)');
+    var xdimen = gui.add(parameters, 'd').min(-1).max(1).step(speed).name('Sectiion (X axis)');
     xdimen.onChange(function(jar){
         // mesh.visible = jar;
         pozycja = jar;
@@ -100,7 +100,7 @@ function dodajFolderGUI(nazwa, kolor){
         //selectedObject = scene.getObjectByName(nazwa);
         //console.log(selectedObject);
 
-        model = folder.add(parameters, 'e').name('Pokaż');
+        model = folder.add(parameters, 'e').name('Show');
         model.name = nazwa;
         model.onChange(function(jar){
         //     mesh.visible = jar;

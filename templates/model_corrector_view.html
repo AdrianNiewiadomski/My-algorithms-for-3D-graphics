@@ -30,8 +30,8 @@
 	<body>
 		<div class="body">
 			<div id="navbar">
-				<a href="/cross_section_view" class="nav-item">Przekroje obiektów 3D</a>
-				<a href="/model_corrector_view" class="nav-item active">Korektor modeli</a>				
+				<a href="/cross_section" class="nav-item">3D models cross-sections</a>
+				<a href="/model_corrector" class="nav-item active">Correction of 3D models</a>				
 			</div>
 
 			<div id="content">
@@ -71,7 +71,7 @@
 						// model.wczytajZServeraIPopraw(sciezka2+"{{ chosen_file }}"); // from korektor.js
 					{% endif %}
 
-					displayGUI("{{ chosen_file }}"); // from guiKorektor.js
+					displayGUI("Cube"); // from guiKorektor.js
 				</script>
 			</div>
 		</div>

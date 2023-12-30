@@ -1,8 +1,18 @@
 var gui;
-var obj = {
-    add:function(){
+var featuresObj = {
+    downloadModel:function(){
         //console.log("clicked")
         model.zapisz();
+    },
+
+    toggleCorrection:function(){
+        if (model.correction==true) {
+            model.correction=false;
+            model.wczytajZServera(sciezka2+model.nazwaModelu);
+        } else {
+            model.correction=true;
+            model.wczytajZServeraIPopraw(sciezka2+model.nazwaModelu);
+        }
     }
 };
 
@@ -12,7 +22,7 @@ function displayGUI(nazwa){
     gui = new dat.GUI();
 
     var speed =0.1;
-    var jar;            //jar przetrzymuje wartosc
+    var jar; //jar przetrzymuje wartosc
 
     parameters = {
         a: "text.txt",
@@ -37,9 +47,11 @@ function displayGUI(nazwa){
         name.setValue(jar);
         // model.wczytajZServera(sciezka2+jar);
         model.wczytajZServeraIPopraw(sciezka2+jar);
+        model.correction=true;
     });
 
-    gui.add(obj,'add').name('Pobierz model');
+    gui.add(featuresObj,'downloadModel').name('Pobierz model');
+    gui.add(featuresObj,'toggleCorrection').name('Toggle Correction');
 
     //gui.close();
     gui.open();

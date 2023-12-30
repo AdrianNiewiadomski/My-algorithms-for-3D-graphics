@@ -100,7 +100,6 @@ function dodajFolderGUI(nazwa, kolor){
         //selectedObject = scene.getObjectByName(nazwa);
         //console.log(selectedObject);
 
-        console.log(parameters);
         model = folder.add(parameters, 'e').name('Pokaż');
         model.name = nazwa;
         model.onChange(function(jar){

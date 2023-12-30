@@ -5,18 +5,10 @@ var obj = {
         model.zapisz();
     }
 };
-var obj2 = {
-    add:function(){
-        //console.log("clicked")
-        //model.zapisz();
-        //document.getElementById('primaryButton').click();
-        confirm_upload();
-    }
-};
 
 
 
-function displayGUI(flaga, nazwa){
+function displayGUI(nazwa){
     gui = new dat.GUI();
 
     var speed =0.1;
@@ -48,10 +40,6 @@ function displayGUI(flaga, nazwa){
     });
 
     gui.add(obj,'add').name('Pobierz model');
-
-    if(flaga==true){
-        gui.add(obj2,'add').name('Zatwierdź');
-    }
 
     //gui.close();
     gui.open();

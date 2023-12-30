@@ -19,8 +19,8 @@
 			<script type="text/javascript" src="{{ url_for('static', filename='js/lib/TrackballControls.js') }}"></script>
 			<script type="text/javascript" src="{{ url_for('static', filename='js/lib/dat.gui.min.js') }}"></script>
 
-			<script type="text/javascript" src="{{ url_for('static', filename='js/guiKorektor.js') }}"></script>
-			<script type="text/javascript" src="{{ url_for('static', filename='js/korektor.js') }}"></script>
+			<script type="text/javascript" src="{{ url_for('static', filename='js/corrector/guiKorektor.js') }}"></script>
+			<script type="text/javascript" src="{{ url_for('static', filename='js/corrector/korektor.js') }}"></script>
 		{% endif %}
 	</head>
 
@@ -68,7 +68,7 @@
 						// model.wczytajZServeraIPopraw(sciezka2+"{{ chosen_file }}"); // from korektor.js
 					{% endif %}
 
-					displayGUI(false, "{{ chosen_file }}"); // from guiKorektor.js
+					displayGUI("{{ chosen_file }}"); // from guiKorektor.js
 				</script>
 			</div>
 		</div>

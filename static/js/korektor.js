@@ -719,8 +719,8 @@ class Model{
 
           // -----------------------------------------------------TWORZYMY KSZTALT
             //var material = new THREE.MeshStandardMaterial( { color : 0x00cc00 } );
-            //var material = new THREE.MeshLambertMaterial();
-            var material = new THREE.MeshPhongMaterial({side:THREE.DoubleSide});
+            var material = new THREE.MeshLambertMaterial();
+            // var material = new THREE.MeshPhongMaterial({side:THREE.DoubleSide});
             var geometry = new THREE.Geometry();
             var proporcje = model.wyznaczProporcje();
             var srodek = [];

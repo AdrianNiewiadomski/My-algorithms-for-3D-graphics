@@ -14,7 +14,15 @@ function inicjujScene(){
     renderer.setSize(document.getElementById("canvas").offsetWidth, document.getElementById("canvas").offsetHeight);
     canvas.appendChild(renderer.domElement);
 
-    dodajSwiatlo();
+    var color = 0xaaaaaa;
+    var brightness = 0.6;
+    var position = 30;
+    var distance = -5;
+    addLight(0xffffff, 0.8, 0, 0, 10);
+    addLight(color, brightness, position, position, distance);
+    addLight(color, brightness, -position, position, distance);
+    addLight(color, brightness, position, -position, distance);
+    addLight(color, brightness, -position, -position, distance);
 
     // var geometry = new THREE.BoxGeometry(1,1,1);
     // var material = new THREE.MeshBasicMaterial({color:0x0000ff});
@@ -30,9 +38,9 @@ function inicjujScene(){
     //displayGUI();
 }
 
-function dodajSwiatlo(){
-    var light = new THREE.PointLight(0xffffff, 1);
-    light.position.set(0,0,5);
+function addLight(color, brightness, pos_x, pos_y, pos_z){
+    var light = new THREE.PointLight(color, brightness);
+    light.position.set(pos_x, pos_y, pos_z);
     camera.add(light);
     scene.add( camera );
 }
@@ -168,7 +176,8 @@ function dodajdoSceny(modele){
                 normalneDoWierzcholkow[i]=[null, null, null];
             }
         } else {
-            material = new THREE.MeshPhongMaterial({color : model.getKolor(), side : THREE.DoubleSide});
+            material = new THREE.MeshLambertMaterial({color : model.getKolor(), side : THREE.DoubleSide});
+            //material = new THREE.MeshPhongMaterial({color : model.getKolor(), side : THREE.DoubleSide});
             normalneDoWierzcholkow = obliczNormalneDoWierzcholkow(sciany, wierzcholki, wektoryNormalne, k);
         }
 

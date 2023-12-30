@@ -58,16 +58,17 @@
 					sciezka2 = "{{ url_for('static', filename='_incorrect_models') }}/";
 				
 					var scene, camera, renderer, controls;
-					inicjujScene();
-					var model = new Model();
+					inicjujScene(); // from korektor.js
+					var model = new Model(); // from korektor.js
 
 					{% if chosen_file == "text.txt" %}
-						model.wczytajZServera(sciezka+"text.txt");
+						model.wczytajZServera(sciezka+"text.txt"); // from korektor.js
 					{% else %}
-						model.wczytajZServeraIPopraw(sciezka2+"{{ chosen_file }}");
+						model.wczytajZServera(sciezka2+"{{ chosen_file }}");
+						// model.wczytajZServeraIPopraw(sciezka2+"{{ chosen_file }}"); // from korektor.js
 					{% endif %}
 
-					displayGUI(false, "{{ chosen_file }}");
+					displayGUI(false, "{{ chosen_file }}"); // from guiKorektor.js
 				</script>
 			</div>
 		</div>

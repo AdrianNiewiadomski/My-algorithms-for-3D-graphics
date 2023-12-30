@@ -43,7 +43,7 @@ function displayGUI(flaga, nazwa){
         //name = gui.add(parameters, 'a');
         //console.log(jar);
         name.setValue(jar);
-        //model.wczytajZServera(sciezka2+jar);
+        // model.wczytajZServera(sciezka2+jar);
         model.wczytajZServeraIPopraw(sciezka2+jar);
     });
 
